@@ -1,0 +1,44 @@
+
+
+<!--Comments-->
+
+<!--    -->
+<!-- <div class="d-flex flex-row bd-highlight mb-3"> -->
+
+
+  <div >
+    <div class="jumbotron" style="background-color: rgba(0, 0, 0, 0.102);">
+    <h1 style="color:rgb(99, 124, 7)">Question : </h1>
+    <h1 class="display-6">{{ qst.questionKey }}</h1>
+    <p class="lead">{{ qst.question }}</p>
+    <hr class="my-4">
+    <!-- <p class="lead">
+      <a class="btn btn-dark btn-lg" role="button" (click)="goBack()">go back to Questions</a>
+    </p> -->
+    </div><br>
+     <b><h2 style="color:blue">Comments : </h2></b><hr/>
+    <div class="col-12 mb-5" *ngFor="let comment of commentToDisplay
+    |                                     paginate:{itemsPerPage:2,
+                                          currentPage:page,
+                                          totalItems:lengthC}">
+      <blockquote class="blockquote">
+        <!-- <p style="color:rgb(143, 142, 142)">{{idQues.name}}</p> -->
+        <p class="mb-0">{{comment.comment}}</p>
+          <footer class="blockquote-footer" style="color:rgb(143, 142, 142)"><cite title="Source Title">
+            {{comment.dateComment}}</cite></footer>
+        <hr>
+      </blockquote>
+    </div>
+    <b><i><pagination-controls (pageChange)="page = $event" ></pagination-controls></i></b>
+
+    <div class="col-12 mb-5">
+      <div class="form-group">
+        <label for="body">Post a comment:</label>
+        <textarea class="form-control" rows="5" id="body" [(ngModel)]="comment.comment"></textarea>
+      </div>
+      <button type="button" class="btn btn-dark" (click)="saveComment()">Add Comment</button>
+    </div>
+  </div>
+
+
+

@@ -1,0 +1,39 @@
+<body>
+  <div class="absolute">
+      <div class="d-flex align-items-center h-100">
+          <div class="container">
+              <div class="row justify-content-center">
+                  <div class="col-sm-8">
+                      <!-- <mat-card style="background-color:rgb(255, 255, 255)"> -->
+                          <h1 class="text-center" ><b>Update your Question</b></h1>
+                          <form>
+                              <mat-form-field class="w-100">
+                                  <input type="text" matInput
+                                  placeholder="Question KeyWord "
+                                  [(ngModel)]="question.questionKey"
+                                  name="questionKey"
+                                  >
+                              </mat-form-field><br/><br/><br/><br/><br/>
+                              <mat-form-field class="w-100">
+                                  <input type="text" matInput
+                                  placeholder="Question"
+                                  [(ngModel)]="question.question"
+                                  name="question"
+                                  >
+                                  <!-- <textarea class="form-control" rows="5" id="body"
+                                   [(ngModel)]="question.question"></textarea> -->
+                              </mat-form-field><br/>
+                              <div class="mt-4">
+                                  <button class="btn btn-warning" (click)="updateQuestion()"><b>Save changes</b></button>
+                              </div>
+                          </form>
+                      <!-- </mat-card> -->
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</body>
+
+
+

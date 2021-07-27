@@ -1,0 +1,21 @@
+#container {
+    text-align: center;
+    margin: 40px auto;
+    width: 720px;
+    max-width: 100%;
+    height: 481px;
+}
+.absolute {
+    position: center;
+    left: 50%;
+    top: 210px;
+    width: 2000px;
+    height: 900px;
+}
+body {
+    background-image: url("image1.jpg");
+    opacity: 0.9;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

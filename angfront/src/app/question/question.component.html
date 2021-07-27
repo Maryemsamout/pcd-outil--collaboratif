@@ -1,0 +1,64 @@
+<!-- Debut -->
+<div class="container mt-5">
+  <!--Add Question-->
+  <form class="form-inline my-2 my-lg-1">
+    <input class="form-control" type="text"
+    placeholder="Search For Question" name="searchText"
+      [(ngModel)]="searchText"
+      (ngModelChange)="Search()">
+  </form>
+  .....................................................................................
+  <div class="col-12">
+    <div class="form-group">
+      <label for="title"><b>Question Key Word :</b></label>
+      <input type="text" class="form-control"
+      id="title" [(ngModel)]="question.questionKey">
+    </div>
+    <div class="form-group">
+      <label for="body"> <b>Question Body :</b></label>
+      <textarea class="form-control" rows="5" id="body"
+      [(ngModel)]="question.question"></textarea>
+    </div>
+    <!-- <div class="ml-3 bd-highlight" style="width: 40%;">
+      <img [src]="filepath" height="250px;" width="200px;">
+      <input type="file" (change)="uploadPhoto($event)"  class="mt-2" />
+      </div> -->
+    <button type="button" class="btn btn-dark" (click)="saveQuestion()">Ask</button>
+  </div>
+  .....................................................................................<br>
+   <!-- this id is from the child component : {{idO}} -->
+  <div class="row" *ngIf="! displayComments">
+<!-- questions -->
+<div class="col-12" *ngFor="let questionn of questions| paginate:{itemsPerPage:8,
+                            currentPage:page,
+                            totalItems:totalLength} "
+                    [class.active]=" currentIndex"
+                    (click)="setActiveQuestion(questionn,currentIndex)">
+  <div class=" card border-none mb-3">
+    <div class="card-header">
+      <b >Question by :<i style="color:rgb(0, 0, 134)"></i></b>
+      <br />
+      <b>{{questionn.questionKey}}</b>
+      <blockquote class="blockquote">
+        <footer class="blockquote-footer"><cite title="Source Title">
+        {{questionn.dateQuestion}}</cite></footer>
+      </blockquote>
+    </div>
+    <div class="card-body">
+      <p class="card-text"><b>{{questionn.question}}</b></p>
+    </div>
+    <div class="card-footer">
+        <button
+        type="button" class="btn btn-link"
+        (click)="editClick(questionn.idQuestion)"
+        ><b>Comments ({{ getNumber(questionn.idQuestion) }})</b></button>
+
+     <!-- <button type="button" class="btn btn-danger" (click)="confirmBox(this.questionn.idQuestion)" >Delete</button> -->
+  </div>
+  </div>
+</div>
+<b><i><pagination-controls (pageChange)="page = $event"></pagination-controls></i></b>
+ </div>
+<!-- fin question -->
+</div>
+<!-- Fin -->

@@ -1,0 +1,31 @@
+<div class="d-flex align-items-center h-100">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-sm-8">
+    <label><b>Exercice Title {{injectedData.ide}} </b> </label>
+    <input type="text" class="form-control" [(ngModel)]="ExerciceName" placeholder="Enter Exercice Title">
+    <br><br>
+    <label ><b>Exercice Level</b> </label>
+    <div  class ="select" *ngFor="let niv of three">
+                                    <input
+                                      type="radio"
+                                      name="niveau"
+                                      value="{{niv}}"
+                                      (change)="radioChangeHandler1($event)"
+                                    />&nbsp;&nbsp;<b>{{niv}}</b>
+                                    </div>
+
+                                    <br><br>
+  <img [src]=PhotoFilePath >
+  <input type="file" (change)="uploadPhoto($event)" class="mt-2"/>
+  <br><br>
+  <button (click)="addExercice()" type="button"
+  class="btn btn-outline-success btn-rounded"
+  data-mdb-ripple-color="dark" style="margin-right: 60px;">
+  <b>Add</b></button>
+
+  </div>
+  </div>
+  </div>
+   </div>
+

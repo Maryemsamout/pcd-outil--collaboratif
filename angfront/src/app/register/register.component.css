@@ -1,0 +1,38 @@
+.bg 
+{
+    background:url('datadriving.png')
+    no-repeat;
+    width:100%;
+    height: 150vh;
+    background-size: 2000px 
+    
+    
+  
+
+}
+.title{
+    margin: auto;
+    margin-left: 0%;
+    text-align:center;
+    margin-right: 0%;
+}
+.form-continer{border:1px   solid #fff;color:rgb(170, 192, 253);padding:30px 30px;margin-top:20px; border-color:rgb(113, 113, 245);
+
+
+top:0%;
+
+
+position:relative;
+
+}
+.w-100{
+    padding-top: 0.002px;
+    padding-bottom: 0.002px;
+    
+}
+.pass{ background-image:url('datadriving.png');
+height: 120%;}
+.email{ background-image:url('datadriving.png');
+    height: 120%;
+
+}

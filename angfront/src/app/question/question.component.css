@@ -1,0 +1,54 @@
+
+/****menu side nav******/
+.example-spacer {
+  flex: 1 1 auto;
+}
+.modal-dialog {
+  max-width: 950px;
+  margin: 2rem auto;
+}
+
+/* body{
+  background-image: url("lot.jpg");
+  opacity: 0.9;
+   background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+} */
+/*mat drawer container*/
+
+/* .example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  width: 400px;
+  height: 1000px;
+}
+
+.example-container {
+  width: 2130px;
+  height: 972px;
+  border: 0px rgba(255, 255, 255, 0);
+  background-color: rgba(0, 0, 0, 0.253);
+} */
+/****menu side nav******/
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover,
+a:active {
+  color: lightgray;
+}
+
+.nav-caption {
+  display: inline-block;
+  padding-left: 6px;
+}
+

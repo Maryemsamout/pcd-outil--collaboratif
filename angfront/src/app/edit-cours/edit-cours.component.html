@@ -1,0 +1,32 @@
+<div class="d-flex align-items-center h-100">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-sm-8">
+    <label><b>Course Description</b> </label>
+    <input type="text" class="form-control" [(ngModel)]="CoursDescri" placeholder="Enter Course Description">
+    <br><br>
+    <label><b>Course Name</b> </label>
+    <input type="text" class="form-control" [(ngModel)]="CoursName" placeholder="Enter Course Name">
+    <br><br>
+    <label ><b>Course Level</b> </label>
+    <div  class ="select" *ngFor="let niv of three">
+                                    <input
+                                      type="radio"
+                                      name="niveau"
+                                      value="{{niv}}"
+                                      (change)="radioChangeHandler1($event)"
+                                    />&nbsp;&nbsp;<b>{{niv}}</b>
+                                    </div>
+
+                                    <br><br>
+  <img [src]=PhotoFilePath >
+  <input type="file" (change)="uploadPhoto($event)" class="mt-2"/>
+  <br><br>
+  <button (click)="updateCours()" type="button"
+  data-mdb-ripple-color="dark"
+  class="btn btn-outline-warning btn-rounded">
+  <b>Save Changes</b></button>
+  </div>
+  </div>
+  </div>
+   </div>

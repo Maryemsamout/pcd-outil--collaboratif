@@ -1,0 +1,89 @@
+<div class="container-fluid bg">
+   <div class="row">
+   <div class="col-md-4 col-sm-4 col-xs-12"></div>
+   <div class="col-md-4 col-sm-4 col-xs-12">
+     <form class="form-continer" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+     <h1 class="title">Sign Up </h1>
+        <mat-form-field class="w-100">
+        <label for="exampleInputCin">CIN</label>
+                                    <input type="text" matInput
+                                    placeholder="cin "
+                                    [(ngModel)]="etudiant.cin"
+                                    formControlName="cin">
+                                    <mat-error *ngIf="data.cin.errors?.required">CIN is required</mat-error>
+                                    <mat-error *ngIf="data.cin.errors?.minlength">CIN must be 8 characters</mat-error>
+                                    <mat-error *ngIf="data.cin.errors?.maxlength">CIN must be 8 characters</mat-error>
+                                </mat-form-field><br/>
+                                <mat-form-field class="w-100">
+                                <label for="exampleInputFullName">FullName</label>
+                                    <input type="text" matInput
+                                    placeholder="FullName"
+                                    [(ngModel)]="etudiant.fullname"
+                                    formControlName="fullname">
+                                    <mat-error *ngIf="data.fullname.errors?.required">FullName is required</mat-error>
+                                    <mat-error *ngIf="data.fullname.errors?.notContainSpace">FullName must contain a space</mat-error>
+                                </mat-form-field><br/>
+                                <mat-form-field class="w-100">
+                                <label for="exampleInputDate">Date Of Birth</label>
+                                    <input type="date" matInput
+                                    placeholder="Date of Birth"
+                                    [(ngModel)]="etudiant.birthDate"
+                                    formControlName="dob">
+                                    <mat-error *ngIf="data.dob.errors?.required">Date of Birth is required</mat-error>
+                                    <mat-error *ngIf="data.dob.errors?.pattern">Date of Birth must be a valid date in the format YYYY-MM-DD</mat-error>
+                                </mat-form-field><br/>
+
+                                <mat-form-field class="w-100">
+                                <label for="exampleInputEmail">Email</label>
+                                    <input type="text" matInput
+                                    placeholder="Email (@ensi-uma.tn)"
+                                    [(ngModel)]="etudiant.email"
+                                    formControlName="email">
+                                    <mat-error *ngIf="data.email.errors?.required">Email is required</mat-error>
+                                    <mat-error *ngIf="data.email.errors?.email">Email is incorrect</mat-error>
+                                    <mat-error *ngIf="data.email.errors?.pattern">Pattern Email is incorrect</mat-error>
+                                </mat-form-field><br/>
+
+                                <mat-form-field class="w-100">
+                                <label for="exampleInputPassword">Password</label>
+                                    <input type="password" matInput
+                                    placeholder="Password"
+                                    [(ngModel)]="etudiant.password"
+                                    formControlName="password">
+                                    <mat-error *ngIf="data.password.errors?.required">Password is required</mat-error>
+                                </mat-form-field>
+
+                                <mat-form-field class="w-100">
+                                <label for="exampleInputpassword">Confirm Password</label>
+                                    <input type="password" matInput placeholder="Confirm Password" formControlName="repassword">
+                                    <mat-error *ngIf="data.repassword.errors?.required">Confirm Password is required</mat-error>
+                                    <mat-error *ngIf="data.repassword.errors?.confirmedValidator">Password and Confirm Password must be match</mat-error>
+                                </mat-form-field>
+                              <!-- <mat-radio-group aria-label="Select an option">
+                                  <div *ngFor="let niv of three">
+
+                                    <mat-radio-button value="{{niv}}" (change)="radioChangeHandler($event)">{{niv}}</mat-radio-button>
+                                  </div>
+                                </mat-radio-group> -->
+
+                                <div *ngFor="let niv of three">
+                                <label for="exampleInputLevel">Confirm Level</label>
+                                  <input
+                                    type="radio"
+                                    name="niveau"
+                                    value="{{niv}}"
+                                    (change)="radioChangeHandler($event)"
+                                  />{{niv}}
+                                  </div>
+
+                                <div class="mt-4">
+                                    <button class="btn btn-primary" (click)="saveEtudiant()" [routerLink]="['/etudiant']"><b>Register</b></button>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                   
+                                </div>
+                            </form>
+
+    
+    </div>
+    </div>
+</div>

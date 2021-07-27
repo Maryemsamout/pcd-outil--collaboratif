@@ -1,0 +1,68 @@
+<body>
+  <div class="absolute">
+      <div class="d-flex align-items-center h-100">
+          <div class="container">
+              <div class="row justify-content-center">
+                  <div class="col-sm-8">
+                      <!-- <mat-card style="background-color:rgb(255, 255, 255)"> -->
+                          <h1 class="text-center" ><b>Update your account</b></h1>
+                          <form>
+                              <mat-form-field class="w-100">
+                                  <input type="text" matInput
+                                  placeholder="cin "
+                                  [(ngModel)]="etudiant.cin"
+                                  name="cin"
+                                  >
+                              </mat-form-field><br/>
+                              <mat-form-field class="w-100">
+                                  <input type="text" matInput
+                                  placeholder="FullName"
+                                  [(ngModel)]="etudiant.fullname"
+                                  name="fullname"
+                                  >
+                              </mat-form-field><br/>
+                              <mat-form-field class="w-100">
+                                  <input type="date" matInput
+                                  placeholder="Date of Birth"
+                                  [(ngModel)]="etudiant.birthDate"
+                                  name="birthDate"
+                                  >
+                              </mat-form-field><br/>
+
+                              <mat-form-field class="w-100">
+                                  <input type="text" matInput
+                                  placeholder="Email (@ensi-uma.tn)"
+                                  [(ngModel)]="etudiant.email"
+                                  name="email"
+                                  >
+                              </mat-form-field><br/>
+
+                              <mat-form-field class="w-100">
+                                  <input type="password" matInput
+                                  placeholder="Password"
+                                  [(ngModel)]="etudiant.password"
+                                  name="password"
+                                  >
+                              </mat-form-field>
+                                <div *ngFor="let niv of three">
+                                <input
+                                  type="radio"
+                                  name="niveau"
+                                  value="{{niv}}"
+                                  (change)="radioChangeHandler($event)"
+                                />{{niv}}
+                                </div>
+
+                              <div class="mt-4">
+                                  <button class="btn btn-warning" (click)="updateEtudiant()"><b>Update</b></button>
+                              </div>
+                          </form>
+                      <!-- </mat-card> -->
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</body>
+
+

@@ -1,0 +1,64 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+   <div class="example-sidenav-content">
+  <button type="button" mat-button >
+  <mat-icon> menu </mat-icon>
+  </button>
+  </div>
+  </button>
+  <span class="example-spacer"></span>
+</mat-toolbar>
+
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <mat-nav-list>
+      <h2 style="color: rgb(5, 38, 100)" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <b>Welcome <br>&nbsp;&nbsp; &nbsp;
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-person" viewBox="0 0 16 16">
+            <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+            <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2v9.255S12 12 8 12s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h5.5v2z"/>
+          </svg>
+          {{CurrentEnseignant.fullname | uppercase }}</b></h2>
+         <hr><hr>
+      <a mat-list-item   (click)="onSidenavClose()" >
+          <mat-icon>book</mat-icon> <span class="nav-caption"><b>Courses</b></span>
+      </a>
+      <a mat-list-item   (click)="onSidenavClose6()" >
+        <mat-icon>book</mat-icon> <span class="nav-caption"><b>My Courses</b></span>
+      </a>
+      <a mat-list-item  (click)="onSidenavClose8()">
+        <mat-icon>supervisor_account</mat-icon><span class="nav-caption"><b>Teachers List</b></span>
+      </a>
+      <a mat-list-item  (click)="onSidenavClose4()">
+        <mat-icon>supervisor_account</mat-icon><span class="nav-caption"><b>Students List</b></span>
+      </a>
+      <a mat-list-item  (click)="onSidenavClose1()">
+          <mat-icon>help</mat-icon> <span class="nav-caption"><b>Questions</b></span>
+      </a>
+      <a mat-list-item  (click)="onSidenavClose5()">
+        <mat-icon> mode_edit_outline </mat-icon> <span class="nav-caption"><b>Exercices</b></span>
+      </a>
+      <a mat-list-item  (click)="onSidenavClose7()">
+        <mat-icon> menu_book</mat-icon> <span class="nav-caption"><b>Tutorials</b></span>
+      </a>
+      <a mat-list-item  (click)="onSidenavClose3()">
+        <mat-icon>manage_accounts</mat-icon><span class="nav-caption"><b>Account Informations</b></span>
+      </a>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div [ngSwitch]="switcher">
+    <router-outlet></router-outlet>
+    <app-question-e [idO]="id" *ngSwitchCase="'question'"></app-question-e>
+    <app-information-e [idO]="id" *ngSwitchCase="'info'"></app-information-e>
+    <app-cours-e [idO]="id" *ngSwitchCase="'cours'"></app-cours-e>
+    <app-list-etudiant [idO]="id" *ngSwitchCase="'listetudiant'"></app-list-etudiant>
+    <app-list-enseignant [idO]="id" *ngSwitchCase="'listenseignant'"></app-list-enseignant>
+    <app-exerciceb [idO]="id" *ngSwitchCase="'exercice'"></app-exerciceb>
+    <app-mes-cours [idO]="id" *ngSwitchCase="'mesCrs'"></app-mes-cours>
+    <app-tutorials [idO]="id" *ngSwitchCase="'tuto'"></app-tutorials>
+    <app-cours-e [idO]="id" *ngSwitchDefault></app-cours-e>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+
